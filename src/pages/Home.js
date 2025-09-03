@@ -1,5 +1,3 @@
-// import { useState } from 'react';
-
 import { Phone, Mail, MapPin, Shield, Search, FileText, Users, Award, Car, Truck, Wrench, Scale, Eye, Camera, Clock, CheckCircle, Star, ArrowRight } from 'lucide-react';
 
 const Home = () => {
@@ -8,25 +6,29 @@ const Home = () => {
       icon: <Search className="w-8 h-8 text-blue-600" />,
       title: "Accident Investigation",
       description: "Comprehensive examination of crash scenes, vehicle damage, and physical evidence to determine causation factors.",
-      bgColor: "from-blue-500 to-cyan-400"
+      bgColor: "from-blue-500 to-cyan-400",
+      img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
     },
     {
       icon: <FileText className="w-8 h-8 text-blue-600" />,
       title: "Evidence Analysis",
       description: "Detailed analysis of crash data, electronic vehicle records, and physical evidence using advanced methodologies.",
-      bgColor: "from-purple-500 to-pink-400"
+      bgColor: "from-purple-500 to-pink-400",
+      img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
     },
     {
       icon: <Camera className="w-8 h-8 text-blue-600" />,
       title: "Scene Documentation",
       description: "3D laser scanning, drone photography, and comprehensive scene mapping for accurate reconstruction.",
-      bgColor: "from-green-500 to-emerald-400"
+      bgColor: "from-green-500 to-emerald-400",
+      img: "https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=400&q=80"
     },
     {
       icon: <Scale className="w-8 h-8 text-blue-600" />,
       title: "Expert Testimony",
       description: "Professional courtroom testimony and consultation for legal proceedings and insurance claims.",
-      bgColor: "from-orange-500 to-yellow-400"
+      bgColor: "from-orange-500 to-yellow-400",
+      img: "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80"
     }
   ];
 
@@ -40,22 +42,26 @@ const Home = () => {
     {
       icon: <Eye className="w-6 h-6 text-white" />,
       title: "Rapid Response",
-      description: "24/7 emergency response team for immediate scene documentation and evidence preservation."
+      description: "24/7 emergency response team for immediate scene documentation and evidence preservation.",
+      img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
     },
     {
       icon: <Wrench className="w-6 h-6 text-white" />,
       title: "Advanced Technology",
-      description: "State-of-the-art 3D scanning, computer simulation, and electronic data retrieval systems."
+      description: "State-of-the-art 3D scanning, computer simulation, and electronic data retrieval systems.",
+      img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80"
     },
     {
       icon: <Users className="w-6 h-6 text-white" />,
       title: "Expert Team",
-      description: "ACTAR certified reconstructionists with decades of combined experience in accident analysis."
+      description: "ACTAR certified reconstructionists with decades of combined experience in accident analysis.",
+      img: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80"
     },
     {
       icon: <Award className="w-6 h-6 text-white" />,
       title: "Proven Results",
-      description: "Over 40 years of successful case resolution with clear, defensible expert opinions."
+      description: "Over 40 years of successful case resolution with clear, defensible expert opinions.",
+      img: "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80"
     }
   ];
 
@@ -64,43 +70,36 @@ const Home = () => {
       quote: "Their detailed analysis and expert testimony were instrumental in resolving our complex case.",
       author: "Sarah Johnson",
       role: "Attorney, Johnson & Associates",
-      rating: 5
+      rating: 5,
+      img: "https://randomuser.me/api/portraits/women/44.jpg"
     },
     {
       quote: "Professional, thorough, and responsive. Exactly what we needed for our insurance investigation.",
       author: "Michael Chen",
       role: "Claims Manager, Premier Insurance",
-      rating: 5
+      rating: 5,
+      img: "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
       quote: "The 3D reconstruction and visual evidence they provided made all the difference in court.",
       author: "David Martinez",
       role: "Legal Counsel, Martinez Law Firm",
-      rating: 5
+      rating: 5,
+      img: "https://randomuser.me/api/portraits/men/65.jpg"
     }
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section with Dynamic Background */}
+      {/* Hero Section */}
       <section className="relative flex items-center min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute rounded-full top-20 left-20 w-72 h-72 bg-blue-500/20 blur-3xl animate-pulse"></div>
-          <div className="absolute delay-1000 rounded-full bottom-20 right-20 w-96 h-96 bg-cyan-500/20 blur-3xl animate-pulse"></div>
-          <div className="absolute delay-500 transform -translate-x-1/2 -translate-y-1/2 rounded-full top-1/2 left-1/2 w-80 h-80 bg-purple-500/10 blur-3xl animate-pulse"></div>
+        <div className="absolute top-0 right-0 hidden w-1/2 h-full lg:block">
+          <img
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
+            alt="Accident reconstruction scene"
+            className="object-cover w-full h-full opacity-60"
+          />
         </div>
-        
-        {/* CSS Car Illustration */}
-        <div className="absolute top-10 right-10 opacity-10">
-          <div className="relative w-64 h-32">
-            <div className="absolute bottom-0 w-48 h-20 rounded-lg bg-gradient-to-r from-gray-400 to-gray-600"></div>
-            <div className="absolute w-32 h-16 rounded-t-lg bottom-16 left-8 bg-gradient-to-r from-gray-300 to-gray-500"></div>
-            <div className="absolute w-8 h-8 bg-black rounded-full bottom-2 left-4"></div>
-            <div className="absolute w-8 h-8 bg-black rounded-full bottom-2 right-12"></div>
-          </div>
-        </div>
-
         <div className="relative px-4 py-20 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="text-white">
@@ -134,7 +133,6 @@ const Home = () => {
               </div>
             </div>
             <div className="relative">
-              {/* 3D Stats Card */}
               <div className="relative p-8 transition-transform duration-500 transform shadow-2xl bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 rounded-2xl rotate-3 hover:rotate-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl"></div>
                 <div className="relative grid grid-cols-2 gap-6 text-white">
@@ -156,26 +154,18 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              {/* Floating badges */}
-              <div className="absolute flex items-center justify-center w-16 h-16 font-bold text-white rounded-full -top-4 -left-4 bg-gradient-to-br from-yellow-400 to-orange-500 animate-bounce">
-                <Award className="w-8 h-8" />
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                alt="Expert team at work"
+                className="w-full mt-8 shadow-lg rounded-xl"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section with Enhanced Visuals */}
+      {/* Services Section */}
       <section className="relative py-20 overflow-hidden bg-gradient-to-b from-gray-50 to-white">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="grid h-full grid-cols-12 gap-4">
-            {Array.from({length: 144}).map((_, i) => (
-              <div key={i} className="w-2 h-2 bg-blue-500 rounded-full"></div>
-            ))}
-          </div>
-        </div>
-        
         <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
@@ -185,22 +175,22 @@ const Home = () => {
               From initial crash scene response to expert courtroom testimony, we provide end-to-end accident reconstruction solutions.
             </p>
           </div>
-          
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {services.map((service, index) => (
               <div key={index} className="relative overflow-hidden group">
-                {/* Background gradient */}
+                <img
+                  src={service.img}
+                  alt={service.title}
+                  className="object-cover w-full h-32 mb-4 rounded-lg"
+                />
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.bgColor} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-xl`}></div>
-                
                 <div className="relative flex flex-col items-center justify-center p-6 transition-all duration-300 bg-white shadow-lg rounded-xl hover:shadow-2xl hover:-translate-y-2">
-                  {/* Service icon with animated background */}
                   <div className="relative mb-4">
                     <div className={`absolute inset-0 bg-gradient-to-br ${service.bgColor} rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity`}></div>
                     <div className="relative p-4 transition-transform duration-200 bg-white rounded-full shadow-lg group-hover:scale-110">
                       {service.icon}
                     </div>
                   </div>
-                  
                   <h3 className="mb-3 text-xl font-semibold text-gray-900">{service.title}</h3>
                   <p className="mb-4 text-center text-gray-600">{service.description}</p>
                   <button className="flex items-center space-x-1 font-medium text-blue-600 transition-colors hover:text-blue-800 group-hover:scale-105">
@@ -214,16 +204,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Capabilities Section with Tech Visualization */}
+      {/* Capabilities Section */}
       <section className="relative py-20 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900">
-        {/* Tech Pattern Background */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
-          <div className="absolute w-32 h-32 rotate-45 border rounded-lg top-10 left-10 border-blue-400/30"></div>
-          <div className="absolute w-48 h-48 border rounded-full bottom-10 right-10 border-purple-400/30"></div>
-          <div className="absolute w-24 h-24 rounded-full top-1/2 left-1/4 bg-cyan-400/20 blur-xl"></div>
-        </div>
-        
         <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
@@ -233,13 +215,14 @@ const Home = () => {
               Utilizing cutting-edge technology and proven methodologies for accurate accident reconstruction.
             </p>
           </div>
-          
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {capabilities.map((capability, index) => (
               <div key={index} className="relative text-center group">
-                {/* Glowing background effect */}
-                <div className="absolute inset-0 transition-all opacity-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-lg group-hover:opacity-100"></div>
-                
+                <img
+                  src={capability.img}
+                  alt={capability.title}
+                  className="object-cover w-full h-24 mx-auto mb-4 rounded-lg"
+                />
                 <div className="relative">
                   <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 transition-all duration-300 rounded-full shadow-lg bg-gradient-to-br from-blue-600 to-blue-500 group-hover:from-blue-500 group-hover:to-purple-500 group-hover:scale-110">
                     {capability.icon}
@@ -253,7 +236,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Vehicle Types Section with Vehicle Illustrations */}
+      {/* Vehicle Types Section */}
       <section className="relative py-20 overflow-hidden bg-white">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -277,75 +260,32 @@ const Home = () => {
               </button>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="relative overflow-hidden group">
-                  {/* CSS Car illustration */}
-                  <div className="absolute transition-opacity top-4 right-4 opacity-20 group-hover:opacity-40">
-                    <div className="relative w-16 h-8 rounded-lg bg-gradient-to-r from-blue-400 to-blue-600">
-                      <div className="absolute w-8 h-4 rounded-t -top-2 left-2 bg-gradient-to-r from-blue-300 to-blue-500"></div>
-                      <div className="absolute w-2 h-2 bg-black rounded-full -bottom-1 left-1"></div>
-                      <div className="absolute w-2 h-2 bg-black rounded-full -bottom-1 right-1"></div>
-                    </div>
-                  </div>
-                  <div className="relative flex flex-col items-center justify-center p-6 transition-all duration-300 transform bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl hover:from-blue-100 hover:to-blue-200 hover:-translate-y-1">
-                    <Car className="w-10 h-10 mb-3 text-blue-600" />
-                    <h4 className="font-semibold text-gray-900">Passenger Vehicles</h4>
-                    <p className="mt-2 text-sm text-center text-gray-600">Cars, SUVs, and light trucks</p>
-                  </div>
-                </div>
-                
-                <div className="relative overflow-hidden group">
-                  {/* CSS Equipment illustration */}
-                  <div className="absolute transition-opacity top-4 right-4 opacity-20 group-hover:opacity-40">
-                    <div className="relative w-12 h-12 rounded-lg bg-gradient-to-br from-green-400 to-green-600">
-                      <div className="absolute w-3 h-3 bg-green-300 rounded top-1 left-1"></div>
-                      <div className="absolute w-3 h-3 bg-green-300 rounded bottom-1 right-1"></div>
-                    </div>
-                  </div>
-                  <div className="relative flex flex-col items-center justify-center p-6 transition-all duration-300 transform bg-gradient-to-br from-green-50 to-green-100 rounded-xl hover:from-green-100 hover:to-green-200 hover:-translate-y-1">
-                    <Wrench className="w-10 h-10 mb-3 text-green-600" />
-                    <h4 className="font-semibold text-gray-900">Heavy Equipment</h4>
-                    <p className="mt-2 text-sm text-center text-gray-600">Construction and mining vehicles</p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8 space-y-4">
-                <div className="relative overflow-hidden group">
-                  {/* CSS Truck illustration */}
-                  <div className="absolute transition-opacity top-4 right-4 opacity-20 group-hover:opacity-40">
-                    <div className="relative w-20 h-10 rounded-lg bg-gradient-to-r from-purple-400 to-purple-600">
-                      <div className="absolute w-10 h-6 rounded-t -top-2 left-8 bg-gradient-to-r from-purple-300 to-purple-500"></div>
-                      <div className="absolute w-3 h-3 bg-black rounded-full -bottom-1 left-2"></div>
-                      <div className="absolute w-3 h-3 bg-black rounded-full -bottom-1 right-2"></div>
-                    </div>
-                  </div>
-                  <div className="relative flex flex-col items-center justify-center p-6 transition-all duration-300 transform bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl hover:from-purple-100 hover:to-purple-200 hover:-translate-y-1">
-                    <Truck className="w-10 h-10 mb-3 text-purple-600" />
-                    <h4 className="font-semibold text-gray-900">Commercial Fleet</h4>
-                    <p className="mt-2 text-sm text-center text-gray-600">Trucks, trailers, and delivery vehicles</p>
-                  </div>
-                </div>
-                
-                <div className="relative overflow-hidden group">
-                  <div className="absolute transition-opacity top-4 right-4 opacity-20 group-hover:opacity-40">
-                    <div className="relative h-8 rounded-full w-14 bg-gradient-to-br from-orange-400 to-orange-600">
-                      <div className="absolute w-2 h-2 bg-orange-300 rounded-full top-1 left-1"></div>
-                      <div className="absolute w-2 h-2 bg-orange-300 rounded-full top-1 right-1"></div>
-                    </div>
-                  </div>
-                  <div className="relative flex flex-col items-center justify-center p-6 transition-all duration-300 transform bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl hover:from-orange-100 hover:to-orange-200 hover:-translate-y-1">
-                    <Award className="w-10 h-10 mb-3 text-orange-600" />
-                    <h4 className="font-semibold text-gray-900">Specialized Vehicles</h4>
-                    <p className="mt-2 text-sm text-center text-gray-600">Emergency, agricultural, and recreational</p>
-                  </div>
-                </div>
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=400&q=80"
+                alt="Passenger Vehicles"
+                className="object-cover w-full h-24 mb-2 rounded-lg"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1465101178521-c1a9136a3c8b?auto=format&fit=crop&w=400&q=80"
+                alt="Heavy Equipment"
+                className="object-cover w-full h-24 mb-2 rounded-lg"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=400&q=80"
+                alt="Commercial Fleet"
+                className="object-cover w-full h-24 mb-2 rounded-lg"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+                alt="Specialized Vehicles"
+                className="object-cover w-full h-24 mb-2 rounded-lg"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* About/Process Section with Enhanced Process Visualization */}
+      {/* About/Process Section */}
       <section className="relative py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -370,16 +310,16 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            
             <div className="relative p-8 bg-white shadow-2xl rounded-2xl">
-              {/* Process flow background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl"></div>
-              
+              <img
+                src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+                alt="Process flow"
+                className="object-cover w-full h-32 mb-6 rounded-lg"
+              />
               <div className="relative">
                 <h3 className="mb-6 text-2xl font-bold text-center text-gray-900">Our Process</h3>
                 <div className="space-y-6">
-                  {[
-                    { num: 1, title: "Rapid Response", desc: "Immediate scene documentation and evidence preservation", color: "bg-red-500" },
+                  {[{ num: 1, title: "Rapid Response", desc: "Immediate scene documentation and evidence preservation", color: "bg-red-500" },
                     { num: 2, title: "Data Collection", desc: "3D scanning, photography, and electronic data retrieval", color: "bg-blue-500" },
                     { num: 3, title: "Analysis & Reconstruction", desc: "Computer simulation and scientific analysis", color: "bg-green-500" },
                     { num: 4, title: "Expert Reporting", desc: "Detailed reports and courtroom testimony", color: "bg-purple-500" }
@@ -404,14 +344,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Expertise Section with Enhanced Icons */}
+      {/* Expertise Section */}
       <section className="relative py-20 overflow-hidden bg-white">
-        {/* Background pattern */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 rounded-full w-96 h-96 bg-gradient-to-bl from-blue-100/50 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 rounded-full w-96 h-96 bg-gradient-to-tr from-purple-100/50 to-transparent"></div>
-        </div>
-        
         <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
@@ -421,26 +355,25 @@ const Home = () => {
               Our team combines engineering expertise with advanced technology to provide scientifically accurate accident reconstruction.
             </p>
           </div>
-          
           <div className="grid gap-8 md:grid-cols-3">
             {[
-              { icon: FileText, title: "Technical Analysis", desc: "Computer simulation, vehicle dynamics analysis, and impact reconstruction using advanced engineering principles.", color: "blue" },
-              { icon: Camera, title: "Scene Documentation", desc: "3D laser scanning, drone photography, and comprehensive evidence collection and preservation.", color: "green" },
-              { icon: Users, title: "Expert Testimony", desc: "Clear, compelling courtroom presentations and expert witness services for legal proceedings.", color: "purple" }
+              { icon: FileText, title: "Technical Analysis", desc: "Computer simulation, vehicle dynamics analysis, and impact reconstruction using advanced engineering principles.", color: "blue", img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" },
+              { icon: Camera, title: "Scene Documentation", desc: "3D laser scanning, drone photography, and comprehensive evidence collection and preservation.", color: "green", img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" },
+              { icon: Users, title: "Expert Testimony", desc: "Clear, compelling courtroom presentations and expert witness services for legal proceedings.", color: "purple", img: "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80" }
             ].map((item, index) => {
               const IconComponent = item.icon;
               return (
                 <div key={index} className="relative group">
-                  {/* Animated background gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br from-${item.color}-500/10 to-${item.color}-600/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                  
-                  <div className="relative p-6 text-center transition-all duration-300 border border-gray-200 rounded-xl hover:shadow-2xl hover:-translate-y-2">
-                    <div className={`flex items-center justify-center w-16 h-16 mx-auto mb-4 transition-all duration-300 bg-${item.color}-100 rounded-full group-hover:bg-${item.color}-200 group-hover:scale-110`}>
-                      <IconComponent className={`w-8 h-8 text-${item.color}-600`} />
-                    </div>
-                    <h3 className="mb-3 text-xl font-semibold text-gray-900">{item.title}</h3>
-                    <p className="text-gray-600">{item.desc}</p>
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="object-cover w-full h-24 mb-4 rounded-lg"
+                  />
+                  <div className={`flex items-center justify-center w-16 h-16 mx-auto mb-4 transition-all duration-300 bg-${item.color}-100 rounded-full group-hover:bg-${item.color}-200 group-hover:scale-110`}>
+                    <IconComponent className={`w-8 h-8 text-${item.color}-600`} />
                   </div>
+                  <h3 className="mb-3 text-xl font-semibold text-gray-900">{item.title}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
                 </div>
               );
             })}
@@ -448,14 +381,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section with Enhanced Design */}
+      {/* Testimonials Section */}
       <section className="relative py-20 overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-        <div className="absolute inset-0">
-          <div className="absolute w-32 h-32 rounded-full top-20 left-20 bg-blue-200/30 blur-xl"></div>
-          <div className="absolute w-48 h-48 rounded-full bottom-20 right-20 bg-purple-200/30 blur-xl"></div>
-          <div className="absolute w-64 h-64 transform -translate-x-1/2 -translate-y-1/2 rounded-full top-1/2 left-1/2 bg-indigo-200/20 blur-2xl"></div>
-        </div>
-        
         <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
@@ -465,13 +392,14 @@ const Home = () => {
               See what our clients say about our expert accident reconstruction services.
             </p>
           </div>
-          
           <div className="grid gap-8 md:grid-cols-3">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="relative group">
-                {/* Quote mark decoration */}
-                <div className="absolute font-serif text-6xl text-blue-200 transition-opacity opacity-50 -top-4 -left-4 group-hover:opacity-70">"</div>
-                
+                <img
+                  src={testimonial.img}
+                  alt={testimonial.author}
+                  className="object-cover w-16 h-16 mx-auto mb-4 border-4 border-blue-200 rounded-full"
+                />
                 <div className="relative p-6 transition-all duration-300 transform bg-white border-t-4 border-blue-500 shadow-lg rounded-xl hover:shadow-2xl hover:-translate-y-2">
                   <div className="flex items-center justify-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -490,17 +418,14 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section with Enhanced Visual Appeal */}
+      {/* CTA Section */}
       <section className="relative py-20 overflow-hidden bg-gradient-to-r from-blue-600 via-blue-700 to-purple-700">
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute w-32 h-32 rotate-45 border rounded-lg top-10 left-10 border-white/20 animate-spin-slow"></div>
-          <div className="absolute w-48 h-48 border rounded-full bottom-10 right-10 border-white/10"></div>
-          <div className="absolute w-24 h-24 rounded-full top-1/2 left-1/4 bg-white/10 blur-xl animate-pulse"></div>
-          <div className="absolute w-16 h-16 rounded-lg top-1/3 right-1/3 bg-cyan-400/20 rotate-12"></div>
-        </div>
-        
         <div className="relative px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
+          <img
+            src="https://images.unsplash.com/photo-1465101178521-c1a9136a3c8b?auto=format&fit=crop&w=800&q=80"
+            alt="Team at work"
+            className="w-full max-w-xl mx-auto mb-8 shadow-lg rounded-xl"
+          />
           <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
             Need Expert Accident Reconstruction?
           </h2>
@@ -520,32 +445,24 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Section with Form Enhancement */}
+      {/* Contact Section */}
       <section className="relative py-20 overflow-hidden text-white bg-gradient-to-br from-gray-900 via-slate-900 to-blue-900">
-        {/* Background tech pattern */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            <div className="grid h-full grid-cols-8 gap-8">
-              {Array.from({length: 64}).map((_, i) => (
-                <div key={i} className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: `${i * 0.1}s`}}></div>
-              ))}
-            </div>
-          </div>
-        </div>
-        
         <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
+              <img
+                src="https://images.unsplash.com/photo-1465101178521-c1a9136a3c8b?auto=format&fit=crop&w=800&q=80"
+                alt="Office"
+                className="w-full mb-8 shadow-lg rounded-xl"
+              />
               <h2 className="mb-6 text-3xl font-bold md:text-4xl">
                 Get Expert Analysis Today
               </h2>
               <p className="mb-8 text-xl text-gray-300">
                 Contact our ACTAR certified team for immediate consultation and rapid response services.
               </p>
-              
               <div className="space-y-6">
-                {[
-                  { icon: Phone, title: "24/7 Emergency Response", detail: "(555) 123-CRASH", color: "from-green-400 to-blue-500" },
+                {[{ icon: Phone, title: "24/7 Emergency Response", detail: "(555) 123-CRASH", color: "from-green-400 to-blue-500" },
                   { icon: Mail, title: "Email Consultation", detail: "experts@expertrecon.com", color: "from-blue-400 to-purple-500" },
                   { icon: MapPin, title: "Nationwide Coverage", detail: "Rapid deployment across all states", color: "from-purple-400 to-pink-500" }
                 ].map((contact, index) => {
@@ -564,11 +481,8 @@ const Home = () => {
                 })}
               </div>
             </div>
-            
             <div className="relative p-8 text-gray-900 bg-white shadow-2xl rounded-2xl">
-              {/* Form background gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 rounded-2xl"></div>
-              
               <div className="relative">
                 <h3 className="mb-6 text-2xl font-bold text-center">Request Consultation</h3>
                 <form className="space-y-4">
@@ -620,17 +534,16 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Enhanced Footer */}
+      {/* Footer */}
       <footer className="relative py-12 overflow-hidden text-white bg-gradient-to-br from-gray-800 via-gray-900 to-black">
-        {/* Footer background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-64 h-64 border border-gray-500 rounded-full"></div>
-          <div className="absolute bottom-0 right-0 rotate-45 border border-gray-600 rounded-lg w-96 h-96"></div>
-        </div>
-        
         <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid gap-8 md:grid-cols-4">
             <div className="text-center md:text-left">
+              <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80"
+                alt="Footer visual"
+                className="object-cover w-full h-20 mb-4 rounded-lg"
+              />
               <div className="flex items-center justify-center mb-4 space-x-2 md:justify-start">
                 <div className="p-2 rounded-full bg-gradient-to-r from-blue-500 to-blue-600">
                   <Shield className="w-8 h-8 text-white" />
@@ -650,7 +563,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            
             <div className="text-center md:text-left">
               <h4 className="mb-4 text-lg font-semibold">Services</h4>
               <ul className="space-y-2 text-gray-400">
@@ -659,7 +571,6 @@ const Home = () => {
                 ))}
               </ul>
             </div>
-            
             <div className="text-center md:text-left">
               <h4 className="mb-4 text-lg font-semibold">Industries</h4>
               <ul className="space-y-2 text-gray-400">
@@ -668,12 +579,10 @@ const Home = () => {
                 ))}
               </ul>
             </div>
-            
             <div className="text-center md:text-left">
               <h4 className="mb-4 text-lg font-semibold">Contact</h4>
               <div className="space-y-2 text-gray-400">
-                {[
-                  { icon: Phone, text: "(555) 123-CRASH" },
+                {[{ icon: Phone, text: "(555) 123-CRASH" },
                   { icon: Mail, text: "experts@expertrecon.com" },
                   { icon: MapPin, text: "Nationwide Coverage" }
                 ].map((contact, i) => {
@@ -688,7 +597,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-          
           <div className="pt-8 mt-12 text-center text-gray-400 border-t border-gray-700">
             <p>&copy; 2025 ExpertRecon. All rights reserved. | Professional Accident Reconstruction Services</p>
           </div>

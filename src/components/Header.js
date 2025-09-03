@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Header = () => {
@@ -7,6 +8,7 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    setIsDropdownOpen(false);
   };
 
   const toggleDropdown = () => {
@@ -14,41 +16,41 @@ const Header = () => {
   };
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
+    { name: 'Home', to: '/' },
+    { name: 'About', to: '/about' },
     { 
       name: 'Services', 
-      href: '#services',
-      dropdown: [
-        { name: 'Car', href: '#Car' },
-        { name: 'Accidents', href: '#Accidents' },
-        { name: 'Consulting', href: '#consulting' },
-        { name: 'Support', href: '#support' }
-      ]
+      to: '/services',
+      // dropdown: [
+      //   { name: 'Car', to: '/services/car' },
+      //   { name: 'Accidents', to: '/services/accidents' },
+      //   { name: 'Consulting', to: '/services/consulting' },
+      //   { name: 'Support', to: '/services/support' }
+      // ]
     },
-    { name: 'Testimonials', href: '#Testimonials' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Testimonials', to: '/testimonials' },
+    { name: 'Contact', to: '/contact' }
   ];
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-0 z-50 w-full bg-white shadow-lg">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="flex items-center flex-shrink-0">
             <div className="text-2xl font-bold text-blue-600">
              Chidhakwa
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="items-center hidden space-x-1 md:flex">
             {navItems.map((item, index) => (
               <div key={index} className="relative">
                 {item.dropdown ? (
                   <div className="relative group">
                     <button
-                      className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium flex items-center transition-colors duration-200"
+                      className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 rounded-md hover:text-blue-600"
                       onMouseEnter={() => setIsDropdownOpen(true)}
                       onMouseLeave={() => setIsDropdownOpen(false)}
                     >
@@ -64,24 +66,25 @@ const Header = () => {
                     >
                       <div className="py-1">
                         {item.dropdown.map((dropdownItem, dropdownIndex) => (
-                          <a
+                          <Link
                             key={dropdownIndex}
-                            href={dropdownItem.href}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                            to={dropdownItem.to}
+                            className="block px-4 py-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-blue-50 hover:text-blue-600"
+                            onClick={() => setIsDropdownOpen(false)}
                           >
                             {dropdownItem.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
                   </div>
                 ) : (
-                  <a
-                    href={item.href}
-                    className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  <Link
+                    to={item.to}
+                    className="px-3 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 rounded-md hover:text-blue-600"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}
@@ -89,7 +92,7 @@ const Header = () => {
 
           {/* CTA Button - Desktop */}
           <div className="hidden md:block">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+            <button className="px-4 py-2 text-sm font-medium text-white transition-colors duration-200 bg-blue-600 rounded-md hover:bg-blue-700">
               Get Started
             </button>
           </div>
@@ -98,12 +101,12 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200"
+              className="inline-flex items-center justify-center p-2 text-gray-700 transition-colors duration-200 rounded-md hover:text-blue-600 hover:bg-gray-100"
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="w-6 h-6" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="w-6 h-6" />
               )}
             </button>
           </div>
@@ -119,7 +122,7 @@ const Header = () => {
                 <div>
                   <button
                     onClick={toggleDropdown}
-                    className="w-full text-left text-gray-700 hover:text-blue-600 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium flex items-center justify-between transition-colors duration-200"
+                    className="flex items-center justify-between block w-full px-3 py-2 text-base font-medium text-left text-gray-700 transition-colors duration-200 rounded-md hover:text-blue-600 hover:bg-gray-100"
                   >
                     {item.name}
                     <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
@@ -129,29 +132,29 @@ const Header = () => {
                   {isDropdownOpen && (
                     <div className="pl-6 space-y-1">
                       {item.dropdown.map((dropdownItem, dropdownIndex) => (
-                        <a
+                        <Link
                           key={dropdownIndex}
-                          href={dropdownItem.href}
-                          className="text-gray-600 hover:text-blue-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-sm transition-colors duration-200"
+                          to={dropdownItem.to}
+                          className="block px-3 py-2 text-sm text-gray-600 transition-colors duration-200 rounded-md hover:text-blue-600 hover:bg-gray-50"
                           onClick={() => {
                             setIsMenuOpen(false);
                             setIsDropdownOpen(false);
                           }}
                         >
                           {dropdownItem.name}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
                 </div>
               ) : (
-                <a
-                  href={item.href}
-                  className="text-gray-700 hover:text-blue-600 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                <Link
+                  to={item.to}
+                  className="block px-3 py-2 text-base font-medium text-gray-700 transition-colors duration-200 rounded-md hover:text-blue-600 hover:bg-gray-100"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               )}
             </div>
           ))}
@@ -159,7 +162,7 @@ const Header = () => {
           {/* Mobile CTA Button */}
           <div className="pt-4 border-t border-gray-200">
             <button 
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+              className="w-full px-3 py-2 text-base font-medium text-white transition-colors duration-200 bg-blue-600 rounded-md hover:bg-blue-700"
               onClick={() => setIsMenuOpen(false)}
             >
               Get Started
@@ -167,9 +170,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-
-      {/* Demo Content */}
-      
     </nav>
   );
 };
